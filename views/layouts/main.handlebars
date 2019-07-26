@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>MunchLove</title>
+  {{!-- CSS Links --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/styles/reset.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  
+  {{!-- Google fonts --}}
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+	<!-- Media Query -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+{{{body}}}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+<script type="text/javascript">
+
+  // this click handler is used when there is a user logged in
+  // we put a UserID parameter into the url (i.e. "?userID=1")
+  // putting this parameter into the url allows us to use it when we use the favorites clickHandler later on (see below)
+  $(".searchbutton").click(function(){
+    event.preventDefault(); 
+    // new URL is an object given to us by javascript
+    // we need to initialize it like this because we will need it to use the searchParams method
+    var url = new URL(window.location);
+    var location = $("#search").val();
+    //console.log(location);
+    // we are to using this 'get request' to obtain the userID value (see exports.favorites in authcontroller) 
+    $.get( "/api/favorites", function( data ) {
+      console.log(data);
+      var userID = data.id;
+      console.log(userID);
+      url.searchParams.set("userID", userID);
+      window.location ='/searchresults/' + location + url.search;
+    });
+  })
+
+    $(".searchbutton_noUser").click(function(){
+    event.preventDefault(); 
+    var url = new URL(window.location);
+    var location = $("#search").val();
+    window.location ='/searchresults1/' + location;
+  })
+
+
+    // this clickHandler puts user's favorite restaurants into the userFavorites table (via Sequelize)
+   $(".details").click(function(){
+    event.preventDefault(); 
+
+    //these lines of code give us the value of userID (we put it there from the previous clickHandlers)
+    var url = new URL(window.location);
+    var urlParam = url.search;
+    var query = new URLSearchParams(urlParam);
+    var user = query.get("userID");
+
+    // get this value from handlebars
+    var favoriteID = $(this).attr("id");
+    var favoritesName = $(this).attr("name");
+    var favoritesPhone = $(this).attr("phone");
+    var favoritesRating = $(this).attr("rating");
+    var favoritesImage = $(this).attr("image");
+    console.log(favoritesName);
+    console.log(favoritesPhone);
+    console.log(favoritesRating);
+
+    // we structure it like this so that it can easily be put into the database via sequelize (see apiRoutes.js)
+    var dataObject = {
+      UserinfoId: user,
+      favoritesName: favoritesName,
+      favoritesPhone: favoritesPhone,
+      favoritesRating: favoritesRating,
+      favoritesID: favoriteID,
+      favoritesImage: favoritesImage
+    }
+
+    
+    $.ajax({
+      type: "POST",
+      url: "/api/favorites",
+      data: dataObject,
+    });
+  })
+</script>
+
+
+</html>

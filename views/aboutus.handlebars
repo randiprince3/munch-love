@@ -1,0 +1,267 @@
+<nav class="navbar fixed-top navbar-dark navbar-expand-md shadow-lg ">
+  <img class="logo img-responsive" src="trans3.png">
+  <a class="navbar-brand brand" href="/">Munch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/aboutus">About Us</a>
+      </li>
+     {{#if isAuthenticated}}
+			<li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+			{{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+			{{/if}}
+    </ul>
+  </div>
+</nav>
+<div class="container opacity">
+<div id="home" class="text">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="pageTitle text-center">About Munch</h3>
+      </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p>MunchLove - a play on the popular term "Munchies" is a platform to connect the locally minded 
+          to the wonderous munchies yet unknown. We believe in the power of community, to keep us connected,
+          generate market competition, and improve everyone's quality of life. We hope to encourage like-minded
+          individuals to bind together, connect with local businesses, and show off the pride of the community. 
+        </p>
+      </div>
+    </div>
+
+<div class="row">
+    <div class="col-12">
+      <h3 class="pageTitle text-center">Our Development Team</h3>
+    </div>
+
+    <div class= "row marginLeft">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class = "row">
+          <img src="tony.jpg" class="img-circle" alt="Tony Li">
+        </div>
+        <div class = "row">
+          <p>Tony Li</p>
+          </div>
+        <div class = "row">
+          <p>Team Munch</p>
+          </div>
+        <div class = "row">
+          <p>Favorite Munch:</p>
+          </div>
+        <div class = "row">
+          <p>Pizza Hut</p>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class = "row">
+          <img src="randi.jpg" class="img-circle" alt="Randi Prince">
+        </div>
+        <div class = "row">
+          <p>Randi Prince</p>
+          </div>
+        <div class = "row">
+          <p>Team Queen</p>
+          </div>
+        <div class = "row">
+          <p>Favorite Munch:</p>
+          </div>
+        <div class = "row">
+          <p>7-11</p>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class = "row">
+          <img src="lifan.jpg" class="img-circle" alt="Lifan Jin">
+        </div>
+        <div class = "row">
+          <p>Lifan Jin</p>
+          </div>
+          <div class = "row">
+          <p>Team Potato</p>
+          </div>
+          <div class = "row">
+          <p>Favorite Munch:</p>
+          </div>
+          <div class = "row">
+          <p>The Boiling Crab</p>
+          </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class = "row">
+          <img src="mark.jpg" class="img-circle" alt="Mark Buenviaje">
+        </div>
+        <div class = "row">
+          <p>Mark Buenviaje</p>
+        </div>
+        <div class = "row">
+          <p>Team Gigalo</p>
+        </div>
+        <div class = "row">
+          <p>Favorite Munch:</p>
+        </div>
+        <div class = "row">
+          <p>Joe's Crab Shack</p>
+        </div>
+      </div>
+      <div class="row">
+        {{!-- added this just for now to get rid of the weird ass overlap between footer and card data --}}
+    <div class="col-12">
+      <h3 class="pageTitle text-center BLACK">Our Development Team</h3>
+    </div>
+    <div class="row">
+    <div class="col-12">
+      <h3 class="pageTitle text-center BLACK">Munchaway~</h3>
+    </div>
+    {{!-- the shit i added ends here --}}
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<nav class="navbar sticky-bottom fixed-bottom navbar-dark navbar-expand-md shadow-lg">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class= "col s4 text-center">
+      <a class="foot-link" href="https://github.com/MunchLoveV2/MunchLove">© 2018 Copyright MunchLove</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+	body {
+		background-color: rgb(206, 232, 245);
+		background-image: url("dessert.jpg"); 
+		background-size: 100%; 
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center center;
+		/* background: radial-gradient(circle, white, black); */
+	}
+
+	.navbar {
+		background: rgba(0,0,0,0.8);
+		padding-bottom: 0px; 
+		padding-top: 0px;
+	}
+
+	@media screen and (min-width:768px) {
+    	nav {
+			max-height: 120px;
+		}
+    }
+
+	.brand {
+		/* font-family: 'Sacramento', cursive; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 6em;
+		color: white;
+		transform: scale(1, 1);
+		padding: 0px 30px 0px 30px;
+	}
+
+  .text {
+    color:white;
+  }
+
+	.nav-item{
+		margin:15px;
+	}
+
+	.nav-link {
+		/* font-family: 'Sacramento'; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 2em;
+		color: white;
+		float: right;
+	}
+
+	.foot-link {
+		font-family: 'Amatic SC', cursive;
+		font-size: 150%;
+		color: white;
+	}
+
+	.logo  {
+		width: 5em;
+		height: 5em;
+	}
+
+	#search {		
+		margin-top: 200px;
+	}
+
+	#searchbutton {	
+		display: block;	
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+		background: rgba(0,0,0,0.7);
+	}
+	
+  .img-circle {
+    border-radius: 100%;
+    width:200px; height:200px;
+  }
+
+	.homesearch {
+		margin-top: 10em;
+	}
+
+  #home {
+    margin-top: 150px;
+  }
+
+  .opacity {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2em;
+  }
+
+  .pageTitle {
+    font-size: 2em;
+  }
+
+  .marginLeft {
+    margin-left: 50px;
+  }
+
+  .subTitle {
+    font-size: 2em;
+  }
+
+  nav.shrink {
+    background-color: rgba(0,0,0,1)
+    
+  }
+  .BLACK {
+    opacity: 0;
+  }
+</style>

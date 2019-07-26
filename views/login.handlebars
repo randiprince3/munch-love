@@ -1,0 +1,170 @@
+<nav class="navbar fixed-top navbar-dark navbar-expand-md shadow-lg ">
+  <img class="logo img-responsive" src="trans3.png">
+  <a class="navbar-brand brand" href="/">Munch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container opacity home">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1 class="pageTitle">{{msg}}</h1>
+
+
+			<h2 class="pageTitle">Log In </h2><h2 class="text-right">Not a Muncher yet? <a href="/signup">Sign Up</a></h2>
+
+      <form class="clearfix mb-4" id="login" name="login" method="post" action="login">
+        <div class="form-group">
+            <label for="enterusername">Username</label>
+            <input type="text" name="username" id="username" type="username" class="form-control arial-font" aria-describedby="enterusername" placeholder="Ex: XxprincesscupcakexX">
+          </div>
+          <div class="form-group">
+            <label for="enterpassword">Password</label>
+            <input type="text" name="password" id="password" type="password" class="form-control arial-font" aria-describedby="enterpassword" placeholder="Ex: password123">
+          </div>
+          <button id="login" class="btn btn-primary float-right" value="Log In">Log In</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar sticky-bottom fixed-bottom navbar-dark navbar-expand-md shadow-lg">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class= "col s4 text-center">
+      <a class="foot-link" href="https://github.com/MunchLoveV2/MunchLove">© 2018 Copyright MunchLove</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+	body {
+		background-color: rgb(206, 232, 245);
+		background-image: url("pizza.jpg"); 
+		background-size: 100%; 
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center center;
+		/* background: radial-gradient(circle, white, black); */
+	}
+
+	.navbar {
+		background: rgba(0,0,0,0.8);
+		padding-bottom: 0px; 
+		padding-top: 0px;
+	}
+
+	@media screen and (min-width:768px) {
+    	nav {
+			max-height: 120px;
+		}
+    }
+
+	.brand {
+		/* font-family: 'Sacramento', cursive; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 6em;
+		color: white;
+		transform: scale(1, 1);
+		padding: 0px 30px 0px 30px;
+	}
+
+	.nav-item{
+		margin:15px;
+	}
+
+	.nav-link {
+		/* font-family: 'Sacramento'; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 2em;
+		color: white;
+		float: right;
+	}
+
+	.foot-link {
+		font-family: 'Amatic SC', cursive;
+		font-size: 150%;
+		color: white;
+	}
+
+	.logo  {
+		width: 5em;
+		height: 5em;
+	}
+
+	#search {		
+		margin-top: 200px;
+	}
+
+	#searchbutton {	
+		display: block;	
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+		background: rgba(0,0,0,0.7);
+	}
+	
+  .img-circle {
+    border-radius: 100%;
+  }
+
+	.homesearch {
+		margin-top: 10em;
+	}
+
+  .home {
+    margin-top: 150px;
+  }
+
+  
+  .opacity {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2em;
+  }
+
+  .pageTitle {
+    font-size: 2em;
+  }
+
+  .searchSize {
+    font-size: 20pt;
+  }
+
+	.arial-font {
+		font-family: arial;
+	}
+
+	#login {
+		font-size: 20pt;
+	}
+
+	label {
+		font-size: 24pt;
+	}
+
+</style>

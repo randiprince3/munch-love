@@ -1,0 +1,155 @@
+<nav class="navbar fixed-top navbar-dark navbar-expand-md shadow-lg ">
+  <img class="logo img-responsive" src="trans3.png">
+  <a class="navbar-brand brand" href="/">Munch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/aboutus">About Us</a>
+      </li>
+			{{#if isAuthenticated}}
+			<li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+			{{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+			{{/if}}
+    </ul>
+  </div>
+</nav>
+<div class="container white">
+  <div class="jumbotron mt-4 opacity">
+    <h1 class="display-4 text-center">Sorry! 404 MunchMunch Not Found!
+      <span role="img" aria-label="Face with rolling eyes">🙄</span>
+    </h1>
+    <a class="white goBack" href="/">← Back To MunchHaven!</a>
+  </div>
+</div>
+<nav class="navbar sticky-bottom fixed-bottom navbar-dark navbar-expand-md shadow-lg">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class= "col s4 text-center">
+      <a class="foot-link" href="https://github.com/MunchLoveV2/MunchLove">© 2018 Copyright MunchLove</a>
+    </div>
+  </div>
+</nav>
+
+
+<style>
+	body {
+		background-color: rgb(206, 232, 245);
+		background-image: url("dessert.jpg"); 
+		background-size: 100%; 
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center center;
+		/* background: radial-gradient(circle, white, black); */
+	}
+
+	.navbar {
+		background: rgba(0,0,0,0.8);
+		padding-bottom: 0px; 
+		padding-top: 0px;
+	}
+
+	@media screen and (min-width:768px) {
+    	nav {
+			max-height: 120px;
+		}
+    }
+
+	.brand {
+		/* font-family: 'Sacramento', cursive; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 6em;
+		color: white;
+		transform: scale(1, 1);
+		padding: 0px 30px 0px 30px;
+	}
+
+	.nav-item{
+		margin:15px;
+	}
+
+	.nav-link {
+		/* font-family: 'Sacramento'; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 2em;
+		color: white;
+		float: right;
+	}
+
+	.foot-link {
+		font-family: 'Amatic SC', cursive;
+		font-size: 150%;
+		color: white;
+	}
+
+	.logo  {
+		width: 5em;
+		height: 5em;
+	}
+
+	#search {		
+		margin-top: 200px;
+	}
+
+	#searchbutton {	
+		display: block;	
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+		background: rgba(0,0,0,0.7);
+	}
+	
+  .img-circle {
+    border-radius: 100%;
+  }
+
+	.homesearch {
+		margin-top: 10em;
+	}
+
+  #home {
+    margin-top: 150px;
+  }
+
+  .white {
+    margin-top: 200px;
+    color: white;
+  }
+
+  .goBack {
+    font-size: 2em
+  }
+
+  .opacity {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-family: 'Amatic SC', cursive;
+  }
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

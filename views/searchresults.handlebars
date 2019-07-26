@@ -1,0 +1,231 @@
+<nav class="navbar fixed-top navbar-dark navbar-expand-md shadow-lg ">
+  <img class="logo img-responsive" src="../trans3.png">
+  <a class="navbar-brand brand" href="/">Munch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/aboutus">About Us</a>
+      </li>
+      {{#if isAuthenticated}}
+			<li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+			<li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+			{{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+			{{/if}}
+    </ul>
+  </div>
+</nav>
+
+<div id="home ">
+  <div class="container opacity">
+    <div class ="row margin top">
+
+      <div class = "col-10 offset-1 text-center title">
+        <h4 class="pageTitle">These are the munchies in your area!</h4>
+      </div>
+
+      <div class = "col-4 offset-4 center searchTop">
+        <form class="clearfix mb-4 text-center" action="GET">
+          <div class="form-group">
+            <input type="text" id="search" class="form-control searchSize" aria-describedby="search" placeholder="Search Another Location?">
+          </div>
+          <button class="btn btn-primary float-center searchbutton">Go!</button>
+        </form>
+      </div>
+    </div>
+
+
+      <div class="row">
+        {{#each businesses}}
+          <div class="col-sm-8 col-md-6 col-lg-4" id= "temporaryfontcolor">
+            <div class="card box" style="width: 18rem;">
+              <img class="card-img-top" src={{image}} alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title resName">Name: {{name}}</h5>
+                <h4 class="card-title">Rating: {{rating}}</h4>
+                <h4 class="card-title">Phone Number: {{phone}}</h4>
+                <a id = "{{id}}"
+                  name = "{{name}}"
+                  rating = "{{rating}}"
+                  phone = "{{phone}}"
+                  image = "{{image}}"
+                  class="btn btn-primary details"> Favorite! </a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+    </div>
+  </div>
+</div>
+
+<nav class="navbar sticky-bottom fixed-bottom navbar-dark navbar-expand-md shadow-lg">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <div class= "col s4 text-center">
+      <a class="foot-link" href="https://github.com/MunchLoveV2/MunchLove">© 2018 Copyright MunchLove</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+	body {
+		background-color: rgb(206, 232, 245);
+		background-image: url("../berries.jpg"); 
+		background-size: 100%; 
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center center;
+		/* background: radial-gradient(circle, white, black); */
+	}
+
+  #temporaryfontcolor {
+		color:black;
+	}
+
+	.navbar {
+		background: rgba(0,0,0,0.7);
+		padding-bottom: 0px; 
+		padding-top: 0px;
+    
+	}
+
+	@media screen and (min-width:768px) {
+    	nav {
+			max-height: 120px;
+		}
+    }
+
+
+	.brand {
+		/* font-family: 'Sacramento', cursive; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 6em;
+		color: white;
+		transform: scale(1, 1);
+		padding: 0px 30px 0px 30px;
+	}
+
+	.nav-item{
+		margin:15px;
+	}
+
+	.nav-link {
+		/* font-family: 'Sacramento'; */
+		/* font-family: 'Fredericka the Great', cursive; */
+		font-family: 'Amatic SC', cursive;
+		font-size: 2em;
+		color: white;
+		float: right;
+	}
+
+	.foot-link {
+		font-family: 'Amatic SC', cursive;
+		font-size: 150%;
+		color: white;
+	}
+
+	.logo  {
+		width: 5em;
+		height: 5em;
+	}
+
+	#search {		
+		margin-top: 50px;
+	}
+
+	#searchbutton {	
+		display: block;	
+		margin-left: auto;
+    margin-right: auto;
+	}
+
+  #center {
+  	margin-left: auto;
+    margin-right: auto;
+  }
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+		background: rgba(0,0,0,0.7);
+	}
+	
+  .img-circle {
+    border-radius: 100%;
+  }
+
+	.homesearch {
+		margin-top: 10em;
+	}
+
+  .container {
+    margin-top: 200px;
+  }
+
+  .opacity {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-family: 'Amatic SC', cursive;
+  }
+
+  .searchSize {
+    font-size: 20pt;
+    margin-top: 0px;
+  }
+
+  .row {
+    margin:50px;
+    padding: 30px;
+  }
+
+  .card-img-top {
+    width:286px;
+    height: 200px;
+  }
+
+  .resName {
+    font-size: 24pt;
+    font-weight: bold;
+  }
+
+  .box {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+
+ .top {
+   height: 250px;
+ }
+
+nav.shrink {
+    background-color: rgba(0,0,0,1)
+  }
+
+.pageTitle {
+    font-size: 4em;
+  }
+
+</style>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
