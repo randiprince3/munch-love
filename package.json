@@ -25,7 +25,7 @@
     "npm": "^6.4.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.38.0",
+    "sequelize": "^5.15.1",
     "yelp-api": "^1.0.3"
   },
   "devDependencies": {
