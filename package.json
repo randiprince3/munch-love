@@ -22,7 +22,7 @@
     "mysql2": "^1.5.3",
     "node": "^10.10.0",
     "nodemon": "^1.18.4",
-    "npm": "^6.4.1",
+    "npm": "^6.13.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^4.38.0",
